@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--page-bg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@font-face {
+    font-family: "poppins-bold";
+    src: url(assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: "poppins-bold-it";
+    src: url(assets/fonts/Poppins-BoldItalic.ttf);
+}
+@font-face {
+    font-family: "poppins-ex-bold";
+    src: url(assets/fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "poppins-ex-bold-it";
+    src: url(assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+@font-face {
+    font-family: "poppins-it";
+    src: url(assets/fonts/Poppins-Italic.ttf);
+}
+@font-face {
+    font-family: "poppins-regular";
+    src: url(assets/fonts/Poppins-Regular.ttf);
+}
+
+
+:root{
+    --page-bg: #f0f0f0;
+    --card-bg: #ffffff;
+    --theme-color: #864cff;
+}
+
+
+
+.calculate-contain{
+    width: 610px;
+    height: auto;
+
+    background: var(--card-bg);
+    border-radius: 15px 15px 155px 15px;
+
+    padding: 40px;
+}
+
+.calculate-contain .input-contain{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 140px;
+}
+
+.input-contain .input-bx{
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-bx label{
+    font: 12px "poppins-bold";
+    letter-spacing: 2px;
+}
+
+.input-bx input{
+    width: 100%;
+    height: 55px;
+
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid #d1d1d1;
+    padding-left: 20px;
+    margin: 5px 0;
+
+    font: 26px "poppins-ex-bold";
+}
+
+.input-bx input:focus{
+    border: 1px solid var(--theme-color);
+}
+
+.input-bx input::placeholder{
+    opacity: 0.6;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-bx .input-error{
+    font: 11px "poppins-it";
+    color: red;
+
+    display: none;
+}
+
+.btn-contain{
+    display: flex;
+    justify-content: end;
+    position: relative;
+}
+
+.btn-contain::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 100%;
+    height: 1px;
+
+    background: #d1d1d1;
+    z-index: 0;
+}
+
+.btn-contain .submit-btn{
+    width: 75px;
+    height: 75px;
+
+    border-radius: 50%;
+    background: var(--theme-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.btn-contain .submit-btn:hover{
+    background: #000;
+}
+
+.rslt-contain .rslt{
+    font: 72px "poppins-ex-bold-it";
+    line-height: 74px;
+}
+
+.rslt span{
+    color: var(--theme-color);
+    letter-spacing: 2px;
+}
+
+.attribution 
+{ 
+    width: 80%;
+
+    font-family: "poppins-bold-it";
+    font-size: 12px; 
+    text-align: center;
+    text-transform: capitalize; 
+
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.attribution a 
+{ 
+    color: var(--theme-color); 
+}
+
+
+
+
+/* --------- Responsive Design ---------- */
+
+@media screen and (max-width:768px) {
+    .calculate-contain{
+        width: 100%;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .calculate-contain .input-contain{
+        padding-right: 0px;
+        gap: 0 5px;
+    }
+
+    .input-contain .input-bx{
+        width: 100%;
+    }
+
+    .input-bx input{
+        width: 100%;
+        height: 45px;
+    
+        padding-left: 10px;
+    
+        font: 20px "poppins-ex-bold";
+    }
+
+    .input-bx .input-error{
+        font: 10px "poppins-it";
+    }
+
+    .btn-contain{
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .btn-contain::before{
+        display: none;
+    }
+
+    .btn-contain .submit-btn{
+        width: 55px;
+        height: 55px;
+    }
+
+    .submit-btn img{
+        width: 30px;
+        height: auto;
+    }
+
+    .rslt-contain .rslt{
+        font: 42px "poppins-ex-bold-it";
+        line-height: 48px;
+    }
+}
+
